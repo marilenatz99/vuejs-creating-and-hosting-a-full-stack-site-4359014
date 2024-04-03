@@ -1,6 +1,5 @@
 <template>
-  <div v-if="cartItems.length > 0">
-    <div class="product-container" v-for="product in cartItems" :key="product.id">
+    <div class="product-container" v-for="product in products" :key="product.id">
       <img class="product-image" :src="product.imageName" />
       <div class="details-wrap">
         <h3>{{ product.name }}</h3>
@@ -8,14 +7,11 @@
       </div>
       <button class="remove-button">Remove from cart</button>
     </div>
-    <button class="checkout-button">Proceed to Checkout</button>
-  </div>
-  <div v-if="cartItems.length === 0">You currently have no items in yout cart.</div>
 </template>
 
 <script>
 export default {
   name: "ShoppingCartList",
-  props: ['cartItems']
+  props: ['products']
 }
 </script>
